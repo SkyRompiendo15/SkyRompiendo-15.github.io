@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consejos para Jóvenes Cristianos</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
+            padding: 30px 20px;
+            max-width: 900px;
+            margin: auto;
+            min-height: 100vh;
+        }
+        .header {
+            text-align: center;
+            padding: 30px 0 20px;
+            border-bottom: 4px solid #ff6b6b;
+            margin-bottom: 25px;
+        }
+        .header h1 {
+            font-size: 2.8rem;
+            color: #2d3436;
+            letter-spacing: 2px;
+        }
+        .header p {
+            color: #636e72;
+            font-size: 1.2rem;
+            margin-top: 10px;
+        }
+
+        /* === MENÚ DE CATEGORÍAS === */
+        .menu {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-bottom: 35px;
+        }
+        .menu button {
+            padding: 12px 30px;
+            border: 2px solid #ff6b6b;
+            border-radius: 50px;
+            background: white;
+            color: #2d3436;
+            font-weight: bold;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        .menu button:hover {
+            background: #ff6b6b;
+            color: white;
+            transform: scale(1.05);
+        }
+        .menu button.activo {
+            background: #ff6b6b;
+            color: white;
+            box-shadow: 0 4px 12px rgba(255, 107, 107, 0.4);
+        }
+
+        .articulo {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 25px 30px;
+            margin-bottom: 25px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            border-left: 8px solid #ff6b6b;
+            transition: all 0.3s ease;
+            display: block;
+        }
+        .articulo:hover { transform: translateY(-3px); }
+        .articulo h2 {
+            color: #2d3436;
+            font-size: 1.8rem;
+            margin-bottom: 8px;
+        }
+        .etiqueta-categoria {
+            display: inline-block;
+            background: #ff6b6b;
+            color: white;
+            font-size: 0.75rem;
+            font-weight: bold;
+            padding: 3px 14px;
+            border-radius: 20px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .fecha {
+            color: #e17055;
+            font-size: 0.9rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+            display: inline-block;
+            background: #ffeaa7;
+            padding: 4px 12px;
+            border-radius: 20px;
+            margin-left: 8px;
+        }
+        .articulo p {
+            color: #2d3436;
+            line-height: 1.7;
+            font-size: 1.1rem;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            color: #636e72;
+            border-top: 1px solid #ddd;
+            padding-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>🌟 Consejos para Jóvenes Cristianos</h1>
+        <p>Pureza, Noviazgo y Servicio a Dios</p>
+    </div>
+
+    <!-- MENÚ PRINCIPAL -->
+    <div class="menu">
+        <button class="activo" onclick="filtrar('todos')">📖 Todos</button>
+        <button onclick="filtrar('pureza')">💧 Pureza</button>
+        <button onclick="filtrar('noviazgo')">❤️ Noviazgo</button>
+        <button onclick="filtrar('servicio')">🙏 Servicio a Dios</button>
+    </div>
+
+    <!-- CONTENEDOR DE ARTÍCULOS -->
+    <div id="contenedor-articulos">
+
+        <div class="articulo" data-categoria="pureza">
+            <span class="etiqueta-categoria">💧 Pureza</span>
+            <h2>¿Cómo mantener la pureza en el noviazgo?</h2>
+            <span class="fecha">16 de Agosto, 2026</span>
+            <p>La pureza comienza en la mente y el corazón. Decide desde hoy qué límites pondrás: evita situaciones que te hagan tropezar, cuida tus conversaciones y ora juntos para pedir fortaleza.</p>
+        </div>
+
+        <div class="articulo" data-categoria="noviazgo">
+            <span class="etiqueta-categoria">❤️ Noviazgo</span>
+            <h2>5 señales de un noviazgo cristiano sano</h2>
+            <span class="fecha">15 de Agosto, 2026</span>
+            <p>En un noviazgo con propósito, hay respeto mutuo, comunicación abierta, confianza y sobre todo, buscan a Dios juntos. Si te impulsa a ser mejor persona, vas bien.</p>
+        </div>
+
+        <div class="articulo" data-categoria="servicio">
+            <span class="etiqueta-categoria">🙏 Servicio a Dios</span>
+            <h2>¿Cómo servir a Dios siendo joven?</h2>
+            <span class="fecha">14 de Agosto, 2026</span>
+            <p>No necesitas ser mayor para servir. Puedes empezar en tu iglesia local, ayudando en los niños, en la alabanza o compartiendo tu testimonio en redes.</p>
+        </div>
+
+        <div class="articulo" data-categoria="pureza">
+            <span class="etiqueta-categoria">💧 Pureza</span>
+            <h2>El poder de la palabra en la pureza</h2>
+            <span class="fecha">13 de Agosto, 2026</span>
+            <p>Llena tu mente de versículos y alaba a Dios con tu boca. La pureza también se defiende con lo que permites que entre por tus oídos.</p>
+        </div>
+
+    </div>
+
+    <div class="footer">
+        <p>Hecho con ❤️ para jóvenes que buscan la verdad</p>
+    </div>
+
+    <script>
+        function filtrar(categoria) {
+            const articulos = document.querySelectorAll('.articulo');
+            const botones = document.querySelectorAll('.menu button');
+            const mapaTexto = {
+                'todos': '📖 Todos',
+                'pureza': '💧 Pureza',
+                'noviazgo': '❤️ Noviazgo',
+                'servicio': '🙏 Servicio a Dios'
+            };
+            botones.forEach(boton => {
+                boton.classList.remove('activo');
+                if (boton.textContent.trim() === mapaTexto[categoria]) {
+                    boton.classList.add('activo');
+                }
+            });
+
+            articulos.forEach(articulo => {
+                const categoriaArticulo = articulo.getAttribute('data-categoria');
+                if (categoria === 'todos' || categoriaArticulo === categoria) {
+                    articulo.style.display = 'block';
+                } else {
+                    articulo.style.display = 'none';
+                }
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            filtrar('todos');
+        });
+    </script>
+
+</body>
+  </html>
